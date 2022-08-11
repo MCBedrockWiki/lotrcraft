@@ -1,0 +1,183 @@
+:root {
+    --header_color: #2F2E2E;
+    --wiki-bg_color: #B4A88A;
+    --wiki-body_color: #D2BD9D;
+    --wiki-inner_color_dark: #A58F6D;
+    --wiki-inner_color_light: #EDDABD;
+    --pane-padding: 5px 42px;
+
+
+    --wiki-text_color_light: rgba(245,245,245,1);
+  }
+
+  body {
+    display: block;
+    margin: 0;
+}
+
+.wiki-base-bg {
+    background-color: var(--wiki-bg_color);
+    display:block;
+}
+
+
+
+.wiki-header {
+  background-color: var(--header_color);
+  height: 80px;
+  min-width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+.wiki-footer {
+  background-color: var(--header_color);
+  height: 80px;
+  min-width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+
+
+
+.wiki-body {
+  background-color: var(--wiki-body_color);
+  height: auto;
+
+  width: 50%;
+  min-width: 1000px;
+
+  margin: auto;
+  margin-top: 0%;
+
+  
+  display: flex;
+  flex-flow: column wrap; 
+  align-items: flex-start;
+}
+
+
+/*OUTER LIGHT BOX*/
+.wiki-static-section {
+  background-color: var(--wiki-inner_color_light);
+  box-shadow: 1px 3px 5px #7a7260 inset;
+}
+
+/*INNER TITLE BOX*/
+.wiki-static-section-titlebox {
+  background-color: var(--wiki-inner_color_dark);
+  box-shadow: 1px 2px 4px #5e5748 inset;
+  display: block;
+}
+
+
+
+
+
+
+/*STATIC MOD HEADER PANEL*/
+.mod_logo {
+  width: 220px;
+  height: 220px;
+
+  background-color: black;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  opacity: 1;
+  overflow: hidden;
+}
+.mod_title_text {
+  width: 60%;
+  height: 10%;
+  color: var(--wiki-text_color_light);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Nova Cut;
+  font-weight: Book;
+  font-size: 38px;
+  opacity: 1;
+  text-align: center;
+}
+.mod_addon_text {
+  width: 60%;
+  height: 10%;
+  color: var(--wiki-text_color_light);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Nova Script;
+  font-weight: Book;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+.mod_developer_text {
+  width: 60%;
+  height: 10%;
+  color: var(--wiki-text_color_light);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Nova Script;
+  font-weight: Book;
+  font-size: 13px;
+  opacity: 1;
+  text-align: center;
+}
+.mod_version_text {
+  width: 60%;
+  height: 10%;
+  color: var(--wiki-text_color_light);
+  text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  font-family: Nova Cut;
+  font-weight: Book;
+  font-size: 18px;
+  opacity: 1;
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.wiki-static-side-section-holder {
+  height: auto;
+  width: 27%;
+
+  margin-right: 2%;
+
+  display: flex;
+  flex-flow: column wrap; 
+  align-items: flex-start;
+}
+
+
+
+
+.AD {
+  background-color: black;
+  margin-bottom: 2%;
+  margin-left: 2%;
+  margin-right: 2%;
+}
