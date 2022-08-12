@@ -67,10 +67,6 @@
 .wiki-static-section-titlebox {
   background-color: var(--wiki-inner_color_dark);
   box-shadow: 1px 2px 4px #5e5748 inset;
-
-  display: flex;
-  flex-flow: column wrap; 
-  align-items: flex-start;
 }
 
 
@@ -202,8 +198,5 @@
 
 
 .AD {
-  background-color: black;
-  margin-bottom: 2%;
-  margin-left: 2%;
-  margin-right: 2%;
+  background-color: rgb(59, 48, 57);
 }
