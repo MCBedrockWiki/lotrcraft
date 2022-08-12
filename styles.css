@@ -80,8 +80,7 @@
 
 /*STATIC MOD HEADER PANEL*/
 .mod_logo {
-  min-width: 220px;
-  height: 220px;
+  width: 25%;
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
