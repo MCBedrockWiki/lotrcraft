@@ -1,26 +1,54 @@
 <!DOCTYPE html>
 <head>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script> 
-    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"crossorigin></script>
+    <script src="./scripts/library_load.js" type="text/javascript" crossorigin></script>
+
     <link href="https://fonts.googleapis.com/css?family=Nova+Cut&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nova+Script&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css?family=Nova+Slim&display=swap" rel="stylesheet" />
 
-    <link rel="import" href="elements_base.html">
+    <link rel="stylesheet" href="styles.css"/> 
+    <link rel="import" href="element/comment.html">
+
     <script>  
+        $(document).ready(function () {
+            load_library().then(
+                function(value) {
+                    //BUILD PAGE ELEMENTS
+                    document.querySelector(".wiki-body").appendChild(comment_section_template.cloneNode(true));
+                    
 
-        var elements_base_Import = document.querySelector('link[rel="import"]').import;
-        var comment_base = elements_base_Import.querySelector("#comment");
- 
+                    //LOADS COMMENTS DATA
+                    load_page_comments('home').then(
+                    function(value) {
+                        for (i = 0; i < data_comments[0].comments.length; i++){
+                            console.log(data_comments[0].comments[i].value);
+                            
+                            comment = comment_template.cloneNode(true);
+                            //console.log(comment.querySelector(".mod_title_text"));
+                            comment.querySelector("#comment_owner").innerHTML = data_comments[0].comments[i].author;
+                            comment.querySelector("#comment_date").innerHTML = new Date();//data_comments[0].comments[i].date;
+                            comment.querySelector("#comment_data").innerHTML = data_comments[0].comments[i].value;
+                            document.querySelector("#comment_host").appendChild(comment);
+                        }
+                    });
+                }
+            );
 
 
-        $(document).ready(function(){  
             $("#btn_clone").click(function(){  
-                $(comment_base).clone().appendTo("#comment_host");  
+                document.querySelector("#comment_host").appendChild(comment_template.cloneNode(true));
             });  
-        });  
+        }); 
+    
+
+        
+    
     </script> 
 </head> 
+
+
+
 <body class="wiki-base-bg">
     <div class="wiki-header">
         <img src="images/logo_web.png" alt="MCADDONS.WIKI" height="80px" style="margin:auto;display:block;" >
@@ -78,6 +106,7 @@
                             Minecraft Bedrock Lord Of The Rings Addon is a massive project that aims to bring the world of Middle Earth directly to your Minecraft world. The mod will consist of updates, each base version containing an individual faction. Each faction will include new mobs, armors, foods, weapons, blocks, and biomes. The first update will be titled 'The Fellowship Update'. It will include brand new biomes to be found, creatures to fight, and quests to fulfill!            
                         </div>        
                     </div>
+                    <!--SECOND ARTICLE-->
                     <div style="height: 50%;">
                         <!--SECOND ARTICLE TITLE-->
                         <div class="wiki-static-section-titlebox" style="display: flex;align-items: center;min-height: 75px;height: 10%;margin: 2%;">   
@@ -176,10 +205,10 @@
                 <!--SIDE SECTION HOLDER-->
                 <div style="height: 100%;width: 25%; margin-left: 2%; margin-bottom: 2%;">
                     <!--SEARCH-->
-                    <div class="wiki-static-section" style="height: 5%;width: 92%;align-content: center;">
-                        <div style="height: 11%;"></div>
+                    <div class="wiki-static-section" style="height: 4%;width: 92%;align-content: center;">
+                        <div style="height: 10%;"></div>
                         <div class="wiki-static-section-titlebox" style="width: 94%; height: 82%;margin-left: 3%;">  
-                            <div class="mod_title_text" style="width: 100%; height: 100%;text-align: left;font-size: 120%;padding-top: 8%;padding-left: 6%;"> 
+                            <div class="mod_title_text" style="width: 100%; height: 100%;text-align: left;font-size: 100%;padding-top: 8%;padding-left: 6%;"> 
                                 Search:              
                             </div>    
                         </div> 
@@ -224,22 +253,10 @@
             <div class="AD" style="min-height: 400px;width: 96%; margin-left: 2%; margin-bottom: 2%;">
 
             </div>
-            <div class="wiki-static-section" style="min-height: 500px;height: auto;width: 96%; margin-left: 2%;margin-bottom: 2%;">
-                <div class="wiki-static-section-titlebox" style="display: flex;align-items: center;min-height: 50px;margin: 2%;">   
-                    <div class="mod_title_text" style="margin: 0 auto;font-size: 120%;"> 
-                        Comments              
-                    </div>       
-                </div> 
-                <div id="comment_host">
-                
-                </div>   
-                <button id="btn_clone">Click Me!</button>
-            </div>
         </div>
     </div>
 
     <div class="wiki-footer">
         <img src="images/logo_web.png" alt="MCADDONS.WIKI" height="80px" style="margin:auto;display:block;" >
     </div>
-    
 </body>
